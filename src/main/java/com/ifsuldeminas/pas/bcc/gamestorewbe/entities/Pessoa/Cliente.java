@@ -5,7 +5,7 @@ public class Cliente extends Pessoa{
   private String telefone;
 
   public Cliente(){
-    
+    super();
 }
   public int getCodCliente() {
         return codCliente;
