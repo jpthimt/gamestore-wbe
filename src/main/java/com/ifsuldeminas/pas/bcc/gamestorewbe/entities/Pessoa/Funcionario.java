@@ -7,6 +7,20 @@ public class Funcionario extends Pessoa{
   public class Funcionario(){
     super();
   }
-  
+  public int getCodFunc() {
+        return codFunc;
+    }
+
+    public void setCodFunc(int codFunc) {
+        this.codFunc = codFunc;
+    }
+
+  public int getTipoFunc() {
+        return tipoFunc;
+    }
+
+    public void setTipoFunc(int tipoFunc) {
+        this.tipoFunc = tipoFunc;
+    }
   
 }
