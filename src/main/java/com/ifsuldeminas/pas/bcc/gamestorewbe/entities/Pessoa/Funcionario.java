@@ -5,7 +5,8 @@ public class Funcionario extends Pessoa{
   private int tipoFunc;
 
   public class Funcionario(){
+    super();
   }
-
+  
   
 }
