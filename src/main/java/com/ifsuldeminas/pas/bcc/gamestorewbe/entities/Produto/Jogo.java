@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 package com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Produto;
 
 public class Jogo extends Produto {
@@ -5,13 +8,15 @@ public class Jogo extends Produto {
     private Date dataLanc;
     private String desenvolvedora;
     private float nota;
+    private List<Dlc> dlcs; 
 
-    public Jogo(String nome, Date dataLanc, String desenvolvedora, float nota) {
+    public Jogo(String nome, Date dataLanc, String desenvolvedora, float nota,Dlc dlcs) {
         super();
         this.nome = nome;
         this.dataLanc = dataLanc;
         this.desenvolvedora = desenvolvedora;
         this.nota = nota;
+        this.dlcs = new ArrayList<>();
     }
 
     public void setNome(String nome) {
@@ -44,5 +49,13 @@ public class Jogo extends Produto {
 
     public float getNota() {
         return nota;
+    }
+    
+    public void adicionarDlc(Dlc dlc) {
+        dlcs.add(dlc);
+    }
+
+    public List<Dlc> listarDlcs() {
+        return dlcs;
     }
 }
