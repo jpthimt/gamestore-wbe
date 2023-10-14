@@ -1,30 +1,27 @@
 package com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Produto;
 
 public class Produto {
-  private int codProduto;
-  private float valor;
+  private Integer codProduto;
+  private Float valor;
 
-  public Produto(){
-  }
-
-  public Produto(int codProduto, float valor){
+  public Produto(Integer codProduto, Float valor){
     this.codProduto = codProduto;
     this.valor = valor;
   }
   
-  public void setCodProduto(int codProduto) {
+    public void setCodProduto(Integer codProduto) {
         this.codProduto = codProduto;
   }
-  
-  public String getCodProduto() {
-        return email;
+
+  public Integer getCodProduto() {
+        return codProduto;
   }
 
-  public void setValor(float valor) {
+  public void setValor(Float valor) {
         this.valor = valor;
   }
   
-  public String getValor() {
+    public Float getValor() {
         return valor;
   }
   

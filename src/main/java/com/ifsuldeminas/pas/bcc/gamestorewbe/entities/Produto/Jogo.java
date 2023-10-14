@@ -1,22 +1,27 @@
+package com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Produto;
+
+import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Produto.Dlc;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Produto.Produto;
+
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
-package com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Produto;
 
 public class Jogo extends Produto {
     private String nome;
     private Date dataLanc;
     private String desenvolvedora;
-    private float nota;
-    private List<Dlc> dlcs; 
+    private Float nota;
+    private List<Dlc> dlcs;
 
-    public Jogo(String nome, Date dataLanc, String desenvolvedora, float nota,Dlc dlcs) {
-        super();
+    public Jogo(Integer codProduto, Float valor, String nome, Date dataLanc, String desenvolvedora, Float nota, List<Dlc> dlcs) {
+        super(codProduto, valor);
         this.nome = nome;
         this.dataLanc = dataLanc;
         this.desenvolvedora = desenvolvedora;
         this.nota = nota;
-        this.dlcs = new ArrayList<>();
+        this.dlcs = dlcs;
     }
 
     public void setNome(String nome) {
@@ -43,11 +48,11 @@ public class Jogo extends Produto {
         return desenvolvedora;
     }
 
-    public void setNota(float nota) {
+    public void setNota(Float nota) {
         this.nota = nota;
     }
 
-    public float getNota() {
+    public Float getNota() {
         return nota;
     }
     

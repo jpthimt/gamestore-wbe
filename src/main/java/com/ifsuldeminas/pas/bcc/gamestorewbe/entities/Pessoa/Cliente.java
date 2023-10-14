@@ -1,20 +1,26 @@
 package com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Pessoa;
 
-public class Cliente extends Pessoa{
-  private int codCliente;
-  private String telefone;
+import java.net.Inet4Address;
+import java.util.Date;
 
-  public Cliente(){
-    super();
-}
-  public int getCodCliente() {
+public class Cliente extends Pessoa{
+    private Integer codCliente;
+    private String telefone;
+
+    public Cliente(String nome, String cpf, String email, String senha, Date data_Aniversario, Integer codCliente, String telefone) {
+        super(nome, cpf, email, senha, data_Aniversario);
+        this.codCliente = codCliente;
+        this.telefone = telefone;
+    }
+
+    public Integer getCodCliente() {
         return codCliente;
     }
 
-    public void setCodCliente(int codCliente) {
+    public void setCodCliente(Integer codCliente) {
         this.codCliente = codCliente;
     }
-    
+
     public String getTelefone() {
         return telefone;
     }

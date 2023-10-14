@@ -3,14 +3,14 @@ package com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Produto;
 public class Dlc extends Produto{
   private String nome;
   private Jogo ref_jogo;
-  
-  public Dlc(String nome, Jogo ref_jogo){
-    super();
-    this.nome = nome;
-    this.ref_jogo = ref_jogo;
-  }
-  
-  public void setNome(String nome) {
+
+    public Dlc(Integer codProduto, Float valor, String nome, Jogo ref_jogo) {
+        super(codProduto, valor);
+        this.nome = nome;
+        this.ref_jogo = ref_jogo;
+    }
+
+    public void setNome(String nome) {
       this.nome = nome;
   }
 
