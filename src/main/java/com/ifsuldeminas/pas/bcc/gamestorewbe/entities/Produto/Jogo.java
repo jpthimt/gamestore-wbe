@@ -35,4 +35,59 @@ public class Jogo {
         this.imageURL = imageURL;
     }
 
+    public Integer getIdJogo() {
+        return idJogo;
+    }
+
+    public void setIdJogo(Integer idJogo) {
+        this.idJogo = idJogo;
+    }
+
+    public String getResponseName() {
+        return responseName;
+    }
+
+    public void setResponseName(String responseName) {
+        this.responseName = responseName;
+    }
+
+    public String getReleaseDate() {
+        return releaseDate;
+    }
+
+    public void setReleaseDate(String releaseDate) {
+        this.releaseDate = releaseDate;
+    }
+
+    public Float getMetacritic() {
+        return metacritic;
+    }
+
+    public void setMetacritic(Float metacritic) {
+        this.metacritic = metacritic;
+    }
+
+    public Integer getRecommendationCount() {
+        return recommendationCount;
+    }
+
+    public void setRecommendationCount(Integer recommendationCount) {
+        this.recommendationCount = recommendationCount;
+    }
+
+    public Float getPriceInitial() {
+        return priceInitial;
+    }
+
+    public void setPriceInitial(Float priceInitial) {
+        this.priceInitial = priceInitial;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
+    }
 }
