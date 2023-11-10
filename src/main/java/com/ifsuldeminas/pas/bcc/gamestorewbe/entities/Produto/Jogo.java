@@ -1,66 +1,38 @@
 package com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Produto;
 
-import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Produto.Dlc;
-import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Produto.Produto;
+import jakarta.persistence.*;
+import lombok.*;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 
-public class Jogo extends Produto {
-    private String nome;
-    private Date dataLanc;
-    private String desenvolvedora;
-    private Float nota;
-    private List<Dlc> dlcs;
+@Data // gera getters e setters
+@Entity
+public class Jogo {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer idJogo;
+    @Column
+    private String responseName;
+    @Column
+    private String releaseDate;
+    @Column
+    private Float metacritic;
+    @Column
+    private Integer recommendationCount;
+    @Column
+    private Float priceInitial;
+    @Column
+    private String imageURL;
 
-    public Jogo(Integer codProduto, Float valor, String nome, Date dataLanc, String desenvolvedora, Float nota, List<Dlc> dlcs) {
-        super(codProduto, valor);
-        this.nome = nome;
-        this.dataLanc = dataLanc;
-        this.desenvolvedora = desenvolvedora;
-        this.nota = nota;
-        this.dlcs = dlcs;
+//     Nomes das variáveis devem ser iguais aos nomes dos campos do arquivo json
+    public Jogo(String ResponseName, String ReleaseDate, Float Metacritic, Integer RecommendationCount, Float PriceInitial, String imageURL) {
+        responseName = ResponseName;
+        releaseDate = ReleaseDate;
+        metacritic = Metacritic;
+        recommendationCount = RecommendationCount;
+        priceInitial = PriceInitial;
+        this.imageURL = imageURL;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setDataLanc(Date dataLanc) {
-        this.dataLanc = dataLanc;
-    }
-
-    public Date getDataLanc() {
-        return dataLanc;
-    }
-
-    public void setDesenvolvedora(String desenvolvedora) {
-        this.desenvolvedora = desenvolvedora;
-    }
-
-    public String getDesenvolvedora() {
-        return desenvolvedora;
-    }
-
-    public void setNota(Float nota) {
-        this.nota = nota;
-    }
-
-    public Float getNota() {
-        return nota;
-    }
-    
-    public void adicionarDlc(Dlc dlc) {
-        dlcs.add(dlc);
-    }
-
-    public List<Dlc> listarDlcs() {
-        return dlcs;
-    }
 }
