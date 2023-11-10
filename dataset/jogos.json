@@ -1,5 +1,4 @@
-{
-    "jogos": [
+[
         {
             "responseName": "Counter-Strike",
             "releaseDate": "Nov 1 2000",
@@ -161,4 +160,3 @@
             "imageURL": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1a/Terraria_Steam_artwork.jpg/220px-Terraria_Steam_artwork.jpg"
         }
     ]
-}
