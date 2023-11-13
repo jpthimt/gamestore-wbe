@@ -1,34 +1,46 @@
 package com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Compra;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import lombok.Data;
+
+@Data // gera getters e setters
+@Entity
 public class Compra {
 
-    private Integer cod;
-    private Integer codCliente;
+    @Id
+    @GeneratedValue(strategy = jakarta.persistence.GenerationType.AUTO)
+    private Integer idCompra;
+    @Column
+    private Integer idCliente;
+    @Column
     private float valorTotal;
 
     public Compra() {
     }
 
-    public Compra(Integer cod, Integer codCliente, float valorTotal) {
-        this.cod = cod;
-        this.codCliente = codCliente;
+    public Compra(Integer idCompra, Integer idCliente, float valorTotal) {
+        this.idCompra = idCompra;
+        this.idCliente = idCliente;
         this.valorTotal = valorTotal;
     }
 
-    public Integer getCod() {
-        return cod;
+    public Integer getIdCompra() {
+        return idCompra;
     }
 
-    public void setCod(Integer cod) {
-        this.cod = cod;
+    public void setIdCompra(Integer idCompra) {
+        this.idCompra = idCompra;
     }
 
-    public Integer getCodCliente() {
-        return codCliente;
+    public Integer getIdCliente() {
+        return idCliente;
     }
 
-    public void setCodCliente(Integer codCliente) {
-        this.codCliente = codCliente;
+    public void setIdCliente(Integer idCliente) {
+        this.idCliente = idCliente;
     }
 
     public float getValorTotal() {

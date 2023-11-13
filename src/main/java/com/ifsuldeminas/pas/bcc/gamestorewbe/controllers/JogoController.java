@@ -15,8 +15,6 @@ import java.util.List;
 public class JogoController {
 
     @Autowired
-    private JogoRepository jogoRepository;
-    @Autowired
     private JogoService jogoService;
 
     @GetMapping

@@ -20,7 +20,7 @@ public class JogoServiceImpl implements JogoService {
         return jogoRepository.findAll();
     }
     @Override
-    public Jogo buscarParticipantePorId(Integer id) {
+    public Jogo buscarJogoPorId(Integer id) {
         Optional<Jogo> jogo = jogoRepository.findById(id);
         return jogo.orElse(null);
     }
@@ -33,7 +33,7 @@ public class JogoServiceImpl implements JogoService {
 
     @Override
     public void atualizaJogo(Jogo jogo) {
-        Jogo atual = this.buscarParticipantePorId(jogo.getIdJogo());
+        Jogo atual = this.buscarJogoPorId(jogo.getIdJogo());
         atual.setResponseName(jogo.getResponseName());
         atual.setReleaseDate(jogo.getReleaseDate());
         atual.setMetacritic(jogo.getMetacritic());

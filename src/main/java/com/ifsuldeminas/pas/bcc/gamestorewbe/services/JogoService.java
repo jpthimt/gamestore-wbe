@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface JogoService {
     public List<Jogo> listarJogos();
-    public Jogo buscarParticipantePorId(Integer id);
+    public Jogo buscarJogoPorId(Integer id);
     public void addJogo(Jogo jogo);
     public void atualizaJogo(Jogo jogo);
     public void deletaJogo(Integer id);
