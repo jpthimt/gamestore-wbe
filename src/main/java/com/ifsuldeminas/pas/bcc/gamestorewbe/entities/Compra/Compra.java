@@ -21,8 +21,7 @@ public class Compra {
     public Compra() {
     }
 
-    public Compra(Integer idCompra, Integer idCliente, float valorTotal) {
-        this.idCompra = idCompra;
+    public Compra(Integer idCliente, float valorTotal) {
         this.idCliente = idCliente;
         this.valorTotal = valorTotal;
     }

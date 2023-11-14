@@ -3,7 +3,7 @@ package com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Produto;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 
 @Data // gera getters e setters
@@ -15,7 +15,7 @@ public class Jogo {
     @Column
     private String responseName;
     @Column
-    private String releaseDate;
+    private LocalDate releaseDate;
     @Column
     private Float metacritic;
     @Column
@@ -26,7 +26,7 @@ public class Jogo {
     private String imageURL;
 
 //     Nomes das variáveis devem ser iguais aos nomes dos campos do arquivo json
-    public Jogo(String responseName, String releaseDate, Float metacritic, Integer recommendationCount, Float priceInitial, String imageURL) {
+    public Jogo(String responseName, LocalDate releaseDate, Float metacritic, Integer recommendationCount, Float priceInitial, String imageURL) {
         this.responseName = responseName;
         this.releaseDate = releaseDate;
         this.metacritic = metacritic;

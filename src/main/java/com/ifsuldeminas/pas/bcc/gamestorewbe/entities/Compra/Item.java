@@ -24,8 +24,7 @@ public class Item {
     public Item() {
     }
 
-    public Item(Integer idItem, Integer idCompra, Integer idProduto, Integer quantidade, Float valor) {
-        this.idItem = idItem;
+    public Item( Integer idCompra, Integer idProduto, Integer quantidade, Float valor) {
         this.idCompra = idCompra;
         this.idProduto = idProduto;
         this.quantidade = quantidade;

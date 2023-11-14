@@ -1,8 +1,9 @@
 package com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Pessoa;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 
-import java.util.Date;
+import java.time.LocalDate;
 import lombok.*;
 
 @Data // gera getters e setters
@@ -18,15 +19,19 @@ public class Pessoa {
     @Column
     private String email;
     @Column
-    private Date dataNasc;
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private LocalDate dataNasc;
     @Column
     private String telefone;
 
-    public Pessoa(String nome, String cpf, String email, Date dataNasc, String telefone) {
+    public Pessoa(String nome, String cpf, String email, LocalDate dataNasc, String telefone) {
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
         this.dataNasc = dataNasc;
         this.telefone = telefone;
+    }
+
+    public Pessoa() {
     }
 }
