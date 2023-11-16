@@ -4,10 +4,12 @@ import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Compra.Compra;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.repositories.CompraRepository;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.services.CompraService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class CompraServiceImpl implements CompraService {
 
     @Autowired

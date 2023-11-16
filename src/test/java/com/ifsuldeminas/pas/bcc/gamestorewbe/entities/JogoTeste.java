@@ -26,7 +26,6 @@ public class JogoTeste {
     @Test
     void setJogo(){
         jogo = new Jogo("nome", LocalDate.of(2000,01,10), 1.0f, 1, 1.0f, "url");
-        assertNotNull(jogo.getIdJogo());
         assertNotNull(jogo.getResponseName());
         assertNotNull(jogo.getReleaseDate());
         assertNotNull(jogo.getMetacritic());

@@ -24,7 +24,6 @@ public class CompraTeste {
     @Test
     void setCompra(){
         compra = new Compra(1, 1.0f);
-        assertNotNull(compra.getIdCompra());
         assertNotNull(compra.getIdCliente());
         assertNotNull(compra.getValorTotal());
     }

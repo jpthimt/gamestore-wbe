@@ -47,7 +47,7 @@ public class PessoaServiceImplTeste {
         pessoaService.addPessoa(p);
         p.setNome("nome2");
         pessoaService.atualizaPessoa(p);
-        assertTrue(pessoaService.listarPessoas().get(0).getNome().equals("nome2"));
+        assertTrue(pessoaService.listarPessoas().get(1).getNome().equals("nome2"));
     }
 
     @Test

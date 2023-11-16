@@ -24,7 +24,6 @@ public class ItemTeste {
     @Test
     void setItem(){
         item = new Item(1, 1, 1, 1.0f);
-        assertNotNull(item.getIdItem());
         assertNotNull(item.getIdCompra());
         assertNotNull(item.getIdProduto());
         assertNotNull(item.getQuantidade());

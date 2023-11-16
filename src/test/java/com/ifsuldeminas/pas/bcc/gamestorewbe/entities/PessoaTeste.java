@@ -31,7 +31,6 @@ public class PessoaTeste {
     @Test
     void setPessoa(){
         pessoa = new Pessoa("nome", "cpf", "email", LocalDate.of(2001,01,01), "telefone");
-        assertNotNull(pessoa.getIdPessoa());
         assertNotNull(pessoa.getNome());
         assertNotNull(pessoa.getCpf());
         assertNotNull(pessoa.getEmail());

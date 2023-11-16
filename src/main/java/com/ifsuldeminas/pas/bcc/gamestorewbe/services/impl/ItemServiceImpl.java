@@ -3,12 +3,15 @@ package com.ifsuldeminas.pas.bcc.gamestorewbe.services.impl;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Compra.Item;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.repositories.ItemRepository;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.services.ItemService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class ItemServiceImpl implements ItemService {
 
+    @Autowired
     private ItemRepository itemRepository;
 
     @Override
