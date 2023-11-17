@@ -1,5 +1,6 @@
 package com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Produto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -14,6 +15,7 @@ public class Jogo {
     private Integer idJogo;
     @Column
     private String responseName;
+    @JsonFormat(pattern = "dd/MM/yyyy")
     @Column
     private LocalDate releaseDate;
     @Column
@@ -23,16 +25,16 @@ public class Jogo {
     @Column
     private Float priceInitial;
     @Column
-    private String imageURL;
+    private String imageUrl;
 
 //     Nomes das variáveis devem ser iguais aos nomes dos campos do arquivo json
-    public Jogo(String responseName, LocalDate releaseDate, Float metacritic, Integer recommendationCount, Float priceInitial, String imageURL) {
+    public Jogo(String responseName, LocalDate releaseDate, Float metacritic, Integer recommendationCount, Float priceInitial, String imageUrl) {
         this.responseName = responseName;
         this.releaseDate = releaseDate;
         this.metacritic = metacritic;
         this.recommendationCount = recommendationCount;
         this.priceInitial = priceInitial;
-        this.imageURL = imageURL;
+        this.imageUrl = imageUrl;
     }
 
     public Jogo() {

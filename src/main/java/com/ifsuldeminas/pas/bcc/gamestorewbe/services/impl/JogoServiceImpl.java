@@ -39,7 +39,7 @@ public class JogoServiceImpl implements JogoService {
         atual.setMetacritic(jogo.getMetacritic());
         atual.setRecommendationCount(jogo.getRecommendationCount());
         atual.setPriceInitial(jogo.getPriceInitial());
-        atual.setImageURL(jogo.getImageURL());
+        atual.setImageUrl(jogo.getImageUrl());
         jogoRepository.save(atual);
     }
 

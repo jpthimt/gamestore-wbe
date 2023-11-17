@@ -11,13 +11,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/jogos")
-//@CrossOrigin(origins = "http://localhost:4200") // Para integrar com o front
+@CrossOrigin(origins = "http://localhost:4200/jogos") // Para integrar com o front
 public class JogoController {
 
     @Autowired
     private JogoService jogoService;
 
-    @GetMapping
+    @GetMapping()
     public ResponseEntity<List<Jogo>> listarJogos(){
         List<Jogo> jogos = jogoService.listarJogos();
         return ResponseEntity.ok().body(jogos);

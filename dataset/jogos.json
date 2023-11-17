@@ -1,162 +1,162 @@
 [
         {
             "responseName": "Counter-Strike",
-            "releaseDate": "Nov 1 2000",
+            "releaseDate": "01/11/2000",
             "metacritic": "88",
             "recommendationCount": "68991",
             "priceInitial": "9.99",
-            "imageURL": "https://www.techpowerup.com/review/counter-strike-2-benchmark-test-performance-analysis/images/small.png"
+            "imageUrl": "https://www.techpowerup.com/review/counter-strike-2-benchmark-test-performance-analysis/images/small.png"
         },
         {
             "responseName": "Deep Rock Galactic",
-            "releaseDate": "Feb 13 2018",
+            "releaseDate": "13/02/2018",
             "metacritic": "10",
             "recommendationCount": "2439",
             "priceInitial": "4.99",
-            "imageURL": "https://1.bp.blogspot.com/-F6HSt-JekcI/XrwLemYwW4I/AAAAAAABMWg/vuMqJqZYy4gcKWeALBhf4FRpXcl7mqBjgCLcBGAsYHQ/s640/anao%2Bmedieval%2Beh%2Bcoisa%2Bdo%2Bpassado.jpg"
+            "imageUrl": "https://1.bp.blogspot.com/-F6HSt-JekcI/XrwLemYwW4I/AAAAAAABMWg/vuMqJqZYy4gcKWeALBhf4FRpXcl7mqBjgCLcBGAsYHQ/s640/anao%2Bmedieval%2Beh%2Bcoisa%2Bdo%2Bpassado.jpg"
         },
         {
             "responseName": "Hades",
-            "releaseDate": "Sep 17 2020",
+            "releaseDate": "17/09/2020",
             "metacritic": "79",
             "recommendationCount": "2319",
             "priceInitial": "4.99",
-            "imageURL": "https://image.api.playstation.com/vulcan/ap/rnd/202104/0517/9AcM3vy5t77zPiJyKHwRfnNT.png"
+            "imageUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202104/0517/9AcM3vy5t77zPiJyKHwRfnNT.png"
         },
         {
             "responseName": "Sekiro: Shadows Die Twice",
-            "releaseDate": "Mar 22 2019",
+            "releaseDate": "22/03/2019",
             "metacritic": "0",
             "recommendationCount": "888",
             "priceInitial": "4.99",
-            "imageURL": "https://upload.wikimedia.org/wikipedia/pt/7/7b/Sekiro_Shadows_Die_Twice_capa.png"
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/pt/7/7b/Sekiro_Shadows_Die_Twice_capa.png"
         },
         {
             "responseName": "Subnautica",
-            "releaseDate": "Jan 23 2018",
+            "releaseDate": "23/01/2018",
             "metacritic": "0",
             "recommendationCount": "2934",
             "priceInitial": "4.99",
-            "imageURL": "https://upload.wikimedia.org/wikipedia/pt/1/12/Capa_de_Subnautica.png"
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/pt/1/12/Capa_de_Subnautica.png"
         },
         {
             "responseName": "Risk of Rain",
-            "releaseDate": "Nov 8 2013",
+            "releaseDate": "08/11/2013",
             "metacritic": "0",
             "recommendationCount": "1965",
             "priceInitial": "4.99",
-            "imageURL": "https://cdn.cdkeys.com/500x706/media/catalog/product/n/e/new_project_11_.jpg"
+            "imageUrl": "https://cdn.cdkeys.com/500x706/media/catalog/product/n/e/new_project_11_.jpg"
         },
         {
             "responseName": "The Binding of Isaac: Rebirth",
-            "releaseDate": "Nov 4 2014",
+            "releaseDate": "04/11/2014",
             "metacritic": "96",
             "recommendationCount": "12486",
             "priceInitial": "9.99",
-            "imageURL": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e1/The_Binding_of_Issac_Rebirth_cover.jpg/220px-The_Binding_of_Issac_Rebirth_cover.jpg"
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e1/The_Binding_of_Issac_Rebirth_cover.jpg/220px-The_Binding_of_Issac_Rebirth_cover.jpg"
         },
         {
             "responseName": "Bloons TD 6",
-            "releaseDate": "Jun 14 2018",
+            "releaseDate": "14/06/2018",
             "metacritic": "0",
             "recommendationCount": "2547",
             "priceInitial": "9.99",
-            "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLevz0Q-gACYxxyeIduNpB17UR8IBKW5kHZZm_TTzgngm4PZMOFiRkd7cI-DRvacqDwq4&usqp=CAU"
+            "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLevz0Q-gACYxxyeIduNpB17UR8IBKW5kHZZm_TTzgngm4PZMOFiRkd7cI-DRvacqDwq4&usqp=CAU"
         },
         {
             "responseName": "Hollow Knight",
-            "releaseDate": "Feb 24 2017",
+            "releaseDate": "24/02/2017",
             "metacritic": "96",
             "recommendationCount": "35792",
             "priceInitial": "9.99",
-            "imageURL": "https://upload.wikimedia.org/wikipedia/en/0/04/Hollow_Knight_first_cover_art.webp"
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/en/0/04/Hollow_Knight_first_cover_art.webp"
         },
         {
             "responseName": "Portal 2",
-            "releaseDate": "Apr 18 2011",
+            "releaseDate": "18/04/2011",
             "metacritic": "88",
             "recommendationCount": "53931",
             "priceInitial": "19.99",
-            "imageURL": "https://upload.wikimedia.org/wikipedia/pt/f/f9/Portal2cover.jpg"
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/pt/f/f9/Portal2cover.jpg"
         },
         {
             "responseName": "Dying Light",
-            "releaseDate": "Jan 27 2015",
+            "releaseDate": "27/01/2015",
             "metacritic": "93",
             "recommendationCount": "7185",
             "priceInitial": "9.99",
-            "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvJ8mC0WnqNiGL6i0oHILSreOpmRz1Oq7icQ&usqp=CAU"
+            "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvJ8mC0WnqNiGL6i0oHILSreOpmRz1Oq7icQ&usqp=CAU"
         },
         {
             "responseName": "Don't Starve Together",
-            "releaseDate": "Apr 21 2016",
+            "releaseDate": "21/04/2016",
             "metacritic": "80",
             "recommendationCount": "4328",
             "priceInitial": "4.99",
-            "imageURL": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d2/Don%27t_Starve_cover.jpg/220px-Don%27t_Starve_cover.jpg"
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d2/Don%27t_Starve_cover.jpg/220px-Don%27t_Starve_cover.jpg"
         },
         {
             "responseName": "The Forest",
-            "releaseDate": "Apr 30 2018",
+            "releaseDate": "30/04/2018",
             "metacritic": "91",
             "recommendationCount": "4352",
             "priceInitial": "0",
-            "imageURL": "https://upload.wikimedia.org/wikipedia/en/4/46/TheForest_Game.jpg"
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/en/4/46/TheForest_Game.jpg"
         },
         {
             "responseName": "Phasmophobia",
-            "releaseDate": "Sep 18 2020",
+            "releaseDate": "18/09/2020",
             "metacritic": "84",
             "recommendationCount": "864",
             "priceInitial": "9.99",
-            "imageURL": "https://m.media-amazon.com/images/M/MV5BNzQwZmU2MWQtODM2Ni00YTZjLWJiNzQtZTA0MDBiMzk1YjMzXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg"
+            "imageUrl": "https://m.media-amazon.com/images/M/MV5BNzQwZmU2MWQtODM2Ni00YTZjLWJiNzQtZTA0MDBiMzk1YjMzXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg"
         },
         {
             "responseName": "Stardew Valley",
-            "releaseDate": "Feb 26 2016",
+            "releaseDate": "26/02/2016",
             "metacritic": "87",
             "recommendationCount": "4437",
             "priceInitial": "7.99",
-            "imageURL": "https://upload.wikimedia.org/wikipedia/en/f/fd/Logo_of_Stardew_Valley.png"
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/en/f/fd/Logo_of_Stardew_Valley.png"
         },
         {
             "responseName": "Euro Truck Simulator",
-            "releaseDate": "Oct 19 2012",
+            "releaseDate": "19/10/2012",
             "metacritic": "90",
             "recommendationCount": "27535",
             "priceInitial": "9.99",
-            "imageURL": "https://upload.wikimedia.org/wikipedia/en/0/0e/Euro_Truck_Simulator_2_cover.jpg"
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/en/0/0e/Euro_Truck_Simulator_2_cover.jpg"
         },
         {
             "responseName": "The Witcher 3: Wild Hunt",
-            "releaseDate": "May 19 2015",
+            "releaseDate": "19/05/2015",
             "metacritic": "90",
             "recommendationCount": "6104",
             "priceInitial": "7.99",
-            "imageURL": "https://upload.wikimedia.org/wikipedia/pt/0/06/TW3_Wild_Hunt.png"
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/pt/0/06/TW3_Wild_Hunt.png"
         },
         {
             "responseName": "Left 4 Dead 2",
-            "releaseDate": "Nov 17 2009",
+            "releaseDate": "17/11/2009",
             "metacritic": "92",
             "recommendationCount": "383949",
             "priceInitial": "0",
-            "imageURL": "https://upload.wikimedia.org/wikipedia/en/b/ba/Left4Dead2.jpg"
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/en/b/ba/Left4Dead2.jpg"
         },
         {
             "responseName": "Garry's Mod",
-            "releaseDate": "Dec 24 2004",
+            "releaseDate": "24/12/2004",
             "metacritic": "89",
             "recommendationCount": "9980",
             "priceInitial": "19.99",
-            "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Garry%27s_Mod_logo.svg/200px-Garry%27s_Mod_logo.svg.png"
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Garry%27s_Mod_logo.svg/200px-Garry%27s_Mod_logo.svg.png"
         },
         {
             "responseName": "Terraria",
-            "releaseDate": "May 16 2011",
+            "releaseDate": "16/05/2011",
             "metacritic": "89",
             "recommendationCount": "9980",
             "priceInitial": "19.99",
-            "imageURL": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1a/Terraria_Steam_artwork.jpg/220px-Terraria_Steam_artwork.jpg"
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1a/Terraria_Steam_artwork.jpg/220px-Terraria_Steam_artwork.jpg"
         }
     ]
