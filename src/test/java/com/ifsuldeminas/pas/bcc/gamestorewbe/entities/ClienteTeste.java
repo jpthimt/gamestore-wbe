@@ -1,11 +1,9 @@
 package com.ifsuldeminas.pas.bcc.gamestorewbe.entities;
 
-import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Pessoa.Pessoa;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Cliente.Cliente;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
-
-import javax.xml.crypto.Data;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -13,28 +11,28 @@ import java.time.format.DateTimeFormatter;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class PessoaTeste {
-    Pessoa pessoa = new Pessoa();
+public class ClienteTeste {
+    Cliente cliente = new Cliente();
 
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     @BeforeEach
     void beforeEach() {
-        pessoa = new Pessoa();
+        cliente = new Cliente();
     }
 
     @Test
     void pessoaVazio(){
-        assertNotNull(pessoa);
+        assertNotNull(cliente);
     }
 
     @Test
     void setPessoa(){
-        pessoa = new Pessoa("nome", "cpf", "email", LocalDate.of(2001,01,01), "telefone");
-        assertNotNull(pessoa.getNome());
-        assertNotNull(pessoa.getCpf());
-        assertNotNull(pessoa.getEmail());
-        assertNotNull(pessoa.getDataNasc());
-        assertNotNull(pessoa.getTelefone());
+        cliente = new Cliente("nome", "cpf", "email", LocalDate.of(2001,01,01), "telefone");
+        assertNotNull(cliente.getNome());
+        assertNotNull(cliente.getCpf());
+        assertNotNull(cliente.getEmail());
+        assertNotNull(cliente.getDataNasc());
+        assertNotNull(cliente.getTelefone());
     }
 }

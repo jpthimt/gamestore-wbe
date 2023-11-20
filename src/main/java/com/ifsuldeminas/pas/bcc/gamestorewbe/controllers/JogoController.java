@@ -23,12 +23,18 @@ public class JogoController {
         return ResponseEntity.ok().body(jogos);
     }
 
-    @PostMapping
+    @PostMapping("/addLista")
     public ResponseEntity<List<Jogo>> addJogo(@RequestBody List<Jogo> jogos){
         for (Jogo jogo : jogos) {
             jogoService.addJogo(jogo);
         }
         return ResponseEntity.ok().body(jogos);
+    }
+    @PostMapping
+    public ResponseEntity<Jogo> addJogo(@RequestBody Jogo jogo){
+        jogoService.addJogo(jogo);
+        System.out.println("jogo salvo com sucesso!");
+        return ResponseEntity.ok().body(jogo);
     }
 
     @PutMapping("/{id}")

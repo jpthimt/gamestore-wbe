@@ -2,13 +2,11 @@ package com.ifsuldeminas.pas.bcc.gamestorewbe.services;
 
 import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Compra.Compra;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Compra.Item;
-import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Pessoa.Pessoa;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Produto.Jogo;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.repositories.ItemRepository;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.services.impl.CompraServiceImpl;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.services.impl.ItemServiceImpl;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.services.impl.JogoServiceImpl;
-import com.ifsuldeminas.pas.bcc.gamestorewbe.services.impl.PessoaServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

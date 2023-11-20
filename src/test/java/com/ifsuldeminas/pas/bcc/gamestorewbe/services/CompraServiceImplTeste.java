@@ -1,7 +1,6 @@
 package com.ifsuldeminas.pas.bcc.gamestorewbe.services;
 
 import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Compra.Compra;
-import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Pessoa.Pessoa;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.repositories.CompraRepository;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.services.impl.CompraServiceImpl;
 import org.junit.jupiter.api.Test;

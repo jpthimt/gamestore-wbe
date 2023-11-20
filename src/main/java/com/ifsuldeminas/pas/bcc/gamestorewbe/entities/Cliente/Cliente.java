@@ -1,4 +1,4 @@
-package com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Pessoa;
+package com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Cliente;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
@@ -8,10 +8,10 @@ import lombok.*;
 
 @Data // gera getters e setters
 @Entity
-public class Pessoa {
+public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer idPessoa;
+    private Integer idCliente;
     @Column
     private String nome;
     @Column
@@ -24,7 +24,7 @@ public class Pessoa {
     @Column
     private String telefone;
 
-    public Pessoa(String nome, String cpf, String email, LocalDate dataNasc, String telefone) {
+    public Cliente(String nome, String cpf, String email, LocalDate dataNasc, String telefone) {
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
@@ -32,6 +32,6 @@ public class Pessoa {
         this.telefone = telefone;
     }
 
-    public Pessoa() {
+    public Cliente() {
     }
 }
