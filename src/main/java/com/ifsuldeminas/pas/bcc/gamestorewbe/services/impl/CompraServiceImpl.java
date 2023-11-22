@@ -6,6 +6,7 @@ import com.ifsuldeminas.pas.bcc.gamestorewbe.repositories.CompraRepository;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.repositories.ItemRepository;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.services.ClienteService;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.services.CompraService;
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,8 @@ import java.util.Optional;
 
 @Service
 public class CompraServiceImpl implements CompraService {
+
+    private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(ItemServiceImpl.class);
 
     @Autowired
     private CompraRepository compraRepository;
@@ -69,10 +72,10 @@ public class CompraServiceImpl implements CompraService {
     public Boolean verificaCliente(Compra compra) {
         if (clienteService.buscarClientePorId(compra.getCliente().getIdCliente()) == null){  // Verifica se a cliente existe
             ResponseEntity.badRequest().build();
-            System.out.println("Cliente não existe!");
+            LOG.error("Cliente não existe!");
             return false;
         }
-        System.out.println("Cliente existe!");
+        LOG.info("Cliente existe!");
         return true;
     }
 }

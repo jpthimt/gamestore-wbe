@@ -4,14 +4,18 @@ import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Compra.Item;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.repositories.ItemRepository;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.services.ItemService;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.services.JogoService;
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+
 @Service
 public class ItemServiceImpl implements ItemService {
+
+    private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(ItemServiceImpl.class);
 
     @Autowired
     private ItemRepository itemRepository;
@@ -31,10 +35,7 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public void addItem(Item item) {
-        if (item.getIdItem() != null){
-
-        }
-            item.setIdItem(null);
+        item.setIdItem(null);
         itemRepository.save(item);
     }
     @Override
@@ -67,11 +68,11 @@ public class ItemServiceImpl implements ItemService {
     public boolean verificaJogo(Item item) {
         if (jogoService.buscarJogoPorId(item.getJogo().getIdJogo()) == null){  // Verifica se o jogo existe
             ResponseEntity.badRequest().build();
-            System.out.println("Jogo não existe!");
-            return false;
+            LOG.error("Jogo não existe!");
+            return true;
         }
-        System.out.println("Jogo existe!");
-        return true;
+        LOG.info("Jogo existe!");
+        return false;
     }
 
 

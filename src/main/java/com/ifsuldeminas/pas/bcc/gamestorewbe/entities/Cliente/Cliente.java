@@ -35,7 +35,4 @@ public class Cliente {
     public Cliente() {
     }
 
-    public Integer getIdCliente() {
-        return idCliente;
-    }
 }

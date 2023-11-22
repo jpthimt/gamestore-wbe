@@ -6,12 +6,12 @@ import java.util.List;
 
 public interface ItemService {
 
-    public List<Item> listarItem();
-    public Item buscarItemPorId(Integer id);
-    public void addItem(Item item);
-    public void atualizaItem(Item item);
-    public void deletaItem(Integer id);
-    public Float calculaValorTotal(Item item);
-    public Float calculaValorUnid(Item item);
-    public boolean verificaJogo(Item item);
+    List<Item> listarItem();
+    Item buscarItemPorId(Integer id);
+    void addItem(Item item);
+    void atualizaItem(Item item);
+    void deletaItem(Integer id);
+    Float calculaValorTotal(Item item);
+    Float calculaValorUnid(Item item);
+    boolean verificaJogo(Item item);
 }
