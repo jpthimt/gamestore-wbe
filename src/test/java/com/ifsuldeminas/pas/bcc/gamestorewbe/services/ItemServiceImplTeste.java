@@ -2,7 +2,7 @@ package com.ifsuldeminas.pas.bcc.gamestorewbe.services;
 
 import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Compra.Compra;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Compra.Item;
-import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Produto.Jogo;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Jogo.Jogo;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.repositories.ItemRepository;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.services.impl.CompraServiceImpl;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.services.impl.ItemServiceImpl;

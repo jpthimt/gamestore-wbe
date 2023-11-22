@@ -1,10 +1,13 @@
 package com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Compra;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Cliente.Cliente;
+import jakarta.persistence.*;
 import lombok.Data;
+import org.springframework.cglib.core.Local;
+
+import java.time.LocalDate;
+import java.util.List;
 
 @Data // gera getters e setters
 @Entity
@@ -13,17 +16,29 @@ public class Compra {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.AUTO)
     private Integer idCompra;
-    @Column
-    private Integer idCliente;
+
     @Column
     private float valorTotal;
+
+    @Column
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private LocalDate dataCompra;
+
+    @ManyToOne()
+    @JoinColumn(name = "cliente")
+    private Cliente cliente;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "idCompra")
+    private List<Item> itens;
 
     public Compra() {
     }
 
-    public Compra(Integer idCliente, float valorTotal) {
-        this.idCliente = idCliente;
-        this.valorTotal = valorTotal;
+    public Compra(Cliente ciente, LocalDate dataCompra, List<Item> itens) {
+        this.cliente = cliente;
+        this.dataCompra = dataCompra;
+        this.itens = itens;
     }
 
     public Integer getIdCompra() {
@@ -34,12 +49,12 @@ public class Compra {
         this.idCompra = idCompra;
     }
 
-    public Integer getIdCliente() {
-        return idCliente;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public void setIdCliente(Integer idCliente) {
-        this.idCliente = idCliente;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     public float getValorTotal() {

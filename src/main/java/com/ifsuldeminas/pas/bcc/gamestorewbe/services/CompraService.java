@@ -10,4 +10,6 @@ public interface CompraService {
     public void addCompra(Compra compra);
     public void atualizaCompra(Compra compra);
     public void deletaCompra(Integer id);
+    public Float calculaValorTotal(Compra compra);
+    public Boolean verificaCliente(Compra compra);
 }

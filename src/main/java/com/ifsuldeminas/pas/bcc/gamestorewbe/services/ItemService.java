@@ -11,4 +11,7 @@ public interface ItemService {
     public void addItem(Item item);
     public void atualizaItem(Item item);
     public void deletaItem(Integer id);
+    public Float calculaValorTotal(Item item);
+    public Float calculaValorUnid(Item item);
+    public boolean verificaJogo(Item item);
 }

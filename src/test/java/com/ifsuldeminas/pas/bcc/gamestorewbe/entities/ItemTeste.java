@@ -23,8 +23,7 @@ public class ItemTeste {
 
     @Test
     void setItem(){
-        item = new Item(1, 1, 1, 1.0f);
-        assertNotNull(item.getIdCompra());
+        item = new Item(1, 1, 1.0f);
         assertNotNull(item.getIdProduto());
         assertNotNull(item.getQuantidade());
         assertNotNull(item.getValor());

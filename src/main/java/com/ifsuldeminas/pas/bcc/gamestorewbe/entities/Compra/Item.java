@@ -1,9 +1,7 @@
 package com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Compra;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Jogo.Jogo;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data // gera getters e setters
@@ -12,23 +10,26 @@ public class Item {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.AUTO)
     private Integer idItem;
-    @Column
-    private Integer idCompra;
-    @Column
-    private Integer idProduto;
+
+    @ManyToOne()
+    @JoinColumn(name = "jogo")
+    private Jogo jogo;
+
     @Column
     private Integer quantidade;
+
     @Column
-    private Float valor;
+    private Float valorUnid;
+
+    @Column
+    private Float valorTotal;
 
     public Item() {
     }
 
-    public Item( Integer idCompra, Integer idProduto, Integer quantidade, Float valor) {
-        this.idCompra = idCompra;
-        this.idProduto = idProduto;
+    public Item( Jogo jogo, Integer quantidade) {
+        this.jogo = jogo;
         this.quantidade = quantidade;
-        this.valor = valor;
     }
 
     public Integer getIdItem() {
@@ -37,22 +38,6 @@ public class Item {
 
     public void setIdItem(Integer idItem) {
         this.idItem = idItem;
-    }
-
-    public Integer getIdCompra() {
-        return idCompra;
-    }
-
-    public void setIdCompra(Integer idCompra) {
-        this.idCompra = idCompra;
-    }
-
-    public Integer getIdProduto() {
-        return idProduto;
-    }
-
-    public void setIdProduto(Integer idProduto) {
-        this.idProduto = idProduto;
     }
 
     public Integer getQuantidade() {
@@ -64,10 +49,10 @@ public class Item {
     }
 
     public Float getValor() {
-        return valor;
+        return valorUnid;
     }
 
-    public void setValor(Float valor) {
-        this.valor = valor;
+    public void setValor(Float valorUnid) {
+        this.valorUnid = valorUnid;
     }
 }

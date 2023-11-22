@@ -1,7 +1,6 @@
 package com.ifsuldeminas.pas.bcc.gamestorewbe.controllers;
 
-import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Produto.Jogo;
-import com.ifsuldeminas.pas.bcc.gamestorewbe.repositories.JogoRepository;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Jogo.Jogo;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.services.JogoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
