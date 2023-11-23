@@ -90,12 +90,12 @@ public class CompraController {
         Compra compraAtualizada = compra;
         compraAtualizada.setIdCompra(id);
         if (!compraService.verificaCliente(compraAtualizada)) {
-            LOG.error("Erro ao atualizar Compra - Cliente não existe!");
+            LOG.info("Erro ao atualizar Compra - Cliente não existe!");
             return ResponseEntity.badRequest().build();  // Se o cliente não existe, não atualiza a compra
         }else{
             for(Item item : compraAtualizada.getItens()){
                 if (itemService.verificaJogo(item)){
-                    LOG.error("Erro ao atualizar Item - Jogo não existe!");
+                    LOG.info("Erro ao atualizar Item - Jogo não existe!");
                     return ResponseEntity.badRequest().build();  // Se o jogo não existe, não atualiza o item
                 }else{
                     item.setValorUnid(itemService.calculaValorUnid(item));  // Calcula o valor unitário do item
