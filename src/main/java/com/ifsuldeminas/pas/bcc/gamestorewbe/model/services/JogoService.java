@@ -1,6 +1,6 @@
-package com.ifsuldeminas.pas.bcc.gamestorewbe.services;
+package com.ifsuldeminas.pas.bcc.gamestorewbe.model.services;
 
-import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Jogo.Jogo;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.domain.jogo.Jogo;
 
 import java.util.List;
 

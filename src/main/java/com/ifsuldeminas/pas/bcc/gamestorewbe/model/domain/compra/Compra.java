@@ -1,10 +1,9 @@
-package com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Compra;
+package com.ifsuldeminas.pas.bcc.gamestorewbe.model.domain.compra;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Cliente.Cliente;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.domain.cliente.Cliente;
 import jakarta.persistence.*;
 import lombok.Data;
-import org.springframework.cglib.core.Local;
 
 import java.time.LocalDate;
 import java.util.List;

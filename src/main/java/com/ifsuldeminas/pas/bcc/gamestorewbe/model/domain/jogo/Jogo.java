@@ -1,4 +1,4 @@
-package com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Jogo;
+package com.ifsuldeminas.pas.bcc.gamestorewbe.model.domain.jogo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;

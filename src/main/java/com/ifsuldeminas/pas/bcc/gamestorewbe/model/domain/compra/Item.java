@@ -1,6 +1,7 @@
-package com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Compra;
+package com.ifsuldeminas.pas.bcc.gamestorewbe.model.domain.compra;
 
-import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Jogo.Jogo;
+
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.domain.jogo.Jogo;
 import jakarta.persistence.*;
 import lombok.Data;
 

@@ -1,7 +1,8 @@
-package com.ifsuldeminas.pas.bcc.gamestorewbe.controllers;
+package com.ifsuldeminas.pas.bcc.gamestorewbe.controller.jogo;
 
-import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Jogo.Jogo;
-import com.ifsuldeminas.pas.bcc.gamestorewbe.services.JogoService;
+
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.domain.jogo.Jogo;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.services.JogoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

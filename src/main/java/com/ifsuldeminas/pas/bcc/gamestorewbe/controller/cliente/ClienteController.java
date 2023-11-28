@@ -1,7 +1,8 @@
-package com.ifsuldeminas.pas.bcc.gamestorewbe.controllers;
+package com.ifsuldeminas.pas.bcc.gamestorewbe.controller.cliente;
 
-import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Cliente.Cliente;
-import com.ifsuldeminas.pas.bcc.gamestorewbe.services.ClienteService;
+
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.domain.cliente.Cliente;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.services.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

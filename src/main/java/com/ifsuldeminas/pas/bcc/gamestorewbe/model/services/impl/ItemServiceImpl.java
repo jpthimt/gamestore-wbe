@@ -1,9 +1,14 @@
-package com.ifsuldeminas.pas.bcc.gamestorewbe.services.impl;
+package com.ifsuldeminas.pas.bcc.gamestorewbe.model.services.impl;
 
-import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Compra.Item;
-import com.ifsuldeminas.pas.bcc.gamestorewbe.repositories.ItemRepository;
-import com.ifsuldeminas.pas.bcc.gamestorewbe.services.ItemService;
-import com.ifsuldeminas.pas.bcc.gamestorewbe.services.JogoService;
+
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.domain.compra.Item;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.domain.jogo.Jogo;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.exceptions.compra.ItemNotFoundException;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.exceptions.jogo.JogoNotFoundException;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.repositories.ItemRepository;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.repositories.JogoRepository;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.services.ItemService;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.services.JogoService;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,35 +27,53 @@ public class ItemServiceImpl implements ItemService {
 
     @Autowired
     private JogoService jogoService;
+    @Autowired
+    private JogoRepository jogoRepository;
 
     @Override
     public List<Item> listarItem() {
         return itemRepository.findAll();
     }
     @Override
-    public Item buscarItemPorId(Integer id) {
+    public Item buscarItemPorId(Integer id) throws ItemNotFoundException {
         Optional<Item> item = itemRepository.findById(id);
+        if (!item.isPresent()){
+            throw new ItemNotFoundException(id);
+        }
         return item.orElse(null);
     }
 
     @Override
-    public void addItem(Item item) {
-        item.setIdItem(null);
-        itemRepository.save(item);
+    public void addItem(Item item) throws JogoNotFoundException {
+        Optional<Jogo> opj = Optional.ofNullable(jogoService.buscarJogoPorId(item.getJogo().getIdJogo()));
+        if (!opj.isPresent()) {  // Verifica se o jogo existe
+            LOG.error("Erro ao adicionar Item - Jogo não existe!");
+            throw new JogoNotFoundException(item.getJogo().getIdJogo());
+        } else {
+            item.setValorUnid(calculaValorUnid(item));  // Calcula o valor unitário do item
+            item.setValorTotal(calculaValorTotal(item));  // Calcula o valor total do item
+            itemRepository.save(item);
+            LOG.info("Item adicionado com sucesso");
+        }
     }
     @Override
-    public void atualizaItem(Item item) {
+    public void atualizaItem(Item item) throws ItemNotFoundException{
         Item atual = this.buscarItemPorId(item.getIdItem());
         atual.setJogo(item.getJogo());
         atual.setQuantidade(item.getQuantidade());
         atual.setValorUnid(calculaValorUnid(item));
         atual.setValorTotal(calculaValorTotal(item));
         itemRepository.save(atual);
+        LOG.info("Item atualizado com sucesso");
     }
 
     @Override
-    public void deletaItem(Integer id) {
+    public void deletaItem(Integer id) throws ItemNotFoundException{
+        if (!this.itemRepository.existsById(id)){
+            throw new ItemNotFoundException(id);
+        }
         itemRepository.deleteById(id);
+        LOG.info("Item deletado com sucesso");
     }
 
     @Override
@@ -63,17 +86,4 @@ public class ItemServiceImpl implements ItemService {
     public Float calculaValorUnid(Item item) {
         return jogoService.buscarJogoPorId(item.getJogo().getIdJogo()).getPriceInitial();
     }
-
-    @Override
-    public boolean verificaJogo(Item item) {
-        if (jogoService.buscarJogoPorId(item.getJogo().getIdJogo()) == null){  // Verifica se o jogo existe
-            ResponseEntity.badRequest().build();
-            LOG.error("Jogo não existe!");
-            return true;
-        }
-        LOG.info("Jogo existe!");
-        return false;
-    }
-
-
 }

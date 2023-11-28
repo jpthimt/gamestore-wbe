@@ -1,8 +1,10 @@
-package com.ifsuldeminas.pas.bcc.gamestorewbe.services.impl;
+package com.ifsuldeminas.pas.bcc.gamestorewbe.model.services.impl;
 
-import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Jogo.Jogo;
-import com.ifsuldeminas.pas.bcc.gamestorewbe.repositories.JogoRepository;
-import com.ifsuldeminas.pas.bcc.gamestorewbe.services.JogoService;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.domain.jogo.Jogo;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.exceptions.jogo.JogoNotFoundException;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.repositories.JogoRepository;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.services.JogoService;
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,8 @@ import java.util.Optional;
 @Service
 public class JogoServiceImpl implements JogoService {
 
+    private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(JogoServiceImpl.class);
+
     @Autowired
     private JogoRepository jogoRepository;
 
@@ -20,7 +24,7 @@ public class JogoServiceImpl implements JogoService {
         return jogoRepository.findAll();
     }
     @Override
-    public Jogo buscarJogoPorId(Integer id) {
+    public Jogo buscarJogoPorId(Integer id) throws JogoNotFoundException{
         Optional<Jogo> jogo = jogoRepository.findById(id);
         return jogo.orElse(null);
     }
@@ -29,10 +33,11 @@ public class JogoServiceImpl implements JogoService {
     public void addJogo(Jogo jogo) {
         jogo.setIdJogo(null);
         jogoRepository.save(jogo);
+        LOG.info("Jogo adicionado com sucesso");
     }
 
     @Override
-    public void atualizaJogo(Jogo jogo) {
+    public void atualizaJogo(Jogo jogo) throws JogoNotFoundException{
         Jogo atual = this.buscarJogoPorId(jogo.getIdJogo());
         atual.setResponseName(jogo.getResponseName());
         atual.setReleaseDate(jogo.getReleaseDate());
@@ -41,10 +46,15 @@ public class JogoServiceImpl implements JogoService {
         atual.setPriceInitial(jogo.getPriceInitial());
         atual.setImageUrl(jogo.getImageUrl());
         jogoRepository.save(atual);
+        LOG.info("Jogo atualizado com sucesso");
     }
 
     @Override
-    public void deletaJogo(Integer id) {
+    public void deletaJogo(Integer id) throws JogoNotFoundException {
+        if (!this.jogoRepository.existsById(id)){
+            throw new JogoNotFoundException(id);
+        }
         jogoRepository.deleteById(id);
+        LOG.info("Jogo deletado com sucesso");
     }
 }

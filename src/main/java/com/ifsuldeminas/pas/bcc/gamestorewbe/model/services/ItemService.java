@@ -1,6 +1,6 @@
-package com.ifsuldeminas.pas.bcc.gamestorewbe.services;
+package com.ifsuldeminas.pas.bcc.gamestorewbe.model.services;
 
-import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Compra.Item;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.domain.compra.Item;
 
 import java.util.List;
 
@@ -13,5 +13,5 @@ public interface ItemService {
     void deletaItem(Integer id);
     Float calculaValorTotal(Item item);
     Float calculaValorUnid(Item item);
-    boolean verificaJogo(Item item);
+//    boolean verificaJogo(Item item);
 }
