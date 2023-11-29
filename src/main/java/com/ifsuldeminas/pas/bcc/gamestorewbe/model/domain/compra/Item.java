@@ -25,12 +25,14 @@ public class Item {
     @Column
     private Float valorTotal;
 
-    public Item() {
-    }
-
-    public Item( Jogo jogo, Integer quantidade) {
+    public Item(Jogo jogo, Integer quantidade) {
         this.jogo = jogo;
         this.quantidade = quantidade;
+        this.valorUnid = jogo.getPriceInitial();
+        this.valorTotal = this.valorUnid * this.quantidade;
+    }
+
+    public Item() {
     }
 
     public Integer getIdItem() {
@@ -53,7 +55,4 @@ public class Item {
         return valorUnid;
     }
 
-    public void setValor(Float valorUnid) {
-        this.valorUnid = valorUnid;
-    }
 }

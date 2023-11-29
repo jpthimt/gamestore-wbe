@@ -1,6 +1,6 @@
 package com.ifsuldeminas.pas.bcc.gamestorewbe.entities;
 
-import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Cliente.Cliente;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.domain.cliente.Cliente;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;

@@ -6,12 +6,10 @@ import com.ifsuldeminas.pas.bcc.gamestorewbe.model.domain.jogo.Jogo;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.model.exceptions.compra.ItemNotFoundException;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.model.exceptions.jogo.JogoNotFoundException;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.model.repositories.ItemRepository;
-import com.ifsuldeminas.pas.bcc.gamestorewbe.model.repositories.JogoRepository;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.model.services.ItemService;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.model.services.JogoService;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,8 +25,6 @@ public class ItemServiceImpl implements ItemService {
 
     @Autowired
     private JogoService jogoService;
-    @Autowired
-    private JogoRepository jogoRepository;
 
     @Override
     public List<Item> listarItem() {
@@ -37,7 +33,7 @@ public class ItemServiceImpl implements ItemService {
     @Override
     public Item buscarItemPorId(Integer id) throws ItemNotFoundException {
         Optional<Item> item = itemRepository.findById(id);
-        if (!item.isPresent()){
+        if (item.isEmpty()){
             throw new ItemNotFoundException(id);
         }
         return item.orElse(null);
@@ -46,7 +42,7 @@ public class ItemServiceImpl implements ItemService {
     @Override
     public void addItem(Item item) throws JogoNotFoundException {
         Optional<Jogo> opj = Optional.ofNullable(jogoService.buscarJogoPorId(item.getJogo().getIdJogo()));
-        if (!opj.isPresent()) {  // Verifica se o jogo existe
+        if (opj.isEmpty()) {  // Verifica se o jogo existe
             LOG.error("Erro ao adicionar Item - Jogo não existe!");
             throw new JogoNotFoundException(item.getJogo().getIdJogo());
         } else {

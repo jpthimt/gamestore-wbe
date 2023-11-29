@@ -1,6 +1,6 @@
 package com.ifsuldeminas.pas.bcc.gamestorewbe.entities;
 
-import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Jogo.Jogo;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.domain.jogo.Jogo;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
@@ -31,6 +31,6 @@ public class JogoTeste {
         assertNotNull(jogo.getMetacritic());
         assertNotNull(jogo.getRecommendationCount());
         assertNotNull(jogo.getPriceInitial());
-        assertNotNull(jogo.getImageURL());
+        assertNotNull(jogo.getImageUrl());
     }
 }

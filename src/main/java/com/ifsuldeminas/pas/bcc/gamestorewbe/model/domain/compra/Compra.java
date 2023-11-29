@@ -27,17 +27,15 @@ public class Compra {
     @JoinColumn(name = "cliente")
     private Cliente cliente;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REMOVE})
     @JoinColumn(name = "idCompra")
     private List<Item> itens;
 
-    public Compra() {
-    }
-
-    public Compra(Cliente ciente, LocalDate dataCompra, List<Item> itens) {
+    public Compra(Cliente cliente, List<Item> itens) {
         this.cliente = cliente;
-        this.dataCompra = dataCompra;
         this.itens = itens;
+    }
+    public Compra() {
     }
 
     public Integer getIdCompra() {
@@ -54,10 +52,6 @@ public class Compra {
 
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
-    }
-
-    public float getValorTotal() {
-        return valorTotal;
     }
 
     public void setValorTotal(float valorTotal) {

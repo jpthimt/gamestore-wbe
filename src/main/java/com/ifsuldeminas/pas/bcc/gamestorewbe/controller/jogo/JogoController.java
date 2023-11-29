@@ -33,15 +33,13 @@ public class JogoController {
     @PostMapping
     public ResponseEntity<Jogo> addJogo(@RequestBody Jogo jogo){
         jogoService.addJogo(jogo);
-        System.out.println("jogo salvo com sucesso!");
         return ResponseEntity.ok().body(jogo);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Jogo> atualizaJogo(@RequestBody Jogo jogo, @PathVariable Integer id ){
-        Jogo jogoAtualizado = jogo;
-        jogoAtualizado.setIdJogo(id);
-        jogoService.atualizaJogo(jogoAtualizado);
+        jogo.setIdJogo(id);
+        jogoService.atualizaJogo(jogo);
         return ResponseEntity.noContent().build();
     }
 

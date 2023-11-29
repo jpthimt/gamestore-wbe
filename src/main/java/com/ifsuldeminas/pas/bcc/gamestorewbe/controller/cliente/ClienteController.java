@@ -34,14 +34,12 @@ public class ClienteController {
     @PostMapping
     void addCliente(@RequestBody Cliente cliente){
         clienteService.addCliente(cliente);
-        System.out.println("jogo salvo com sucesso!");
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Cliente> atualizaCliente(@RequestBody Cliente cliente, @PathVariable Integer id ){
-        Cliente clienteAtualizada = cliente;
-        clienteAtualizada.setIdCliente(id);
-        clienteService.atualizaCliente(clienteAtualizada);
+        cliente.setIdCliente(id);
+        clienteService.atualizaCliente(cliente);
         return ResponseEntity.noContent().build();
     }
 

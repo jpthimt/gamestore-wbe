@@ -24,15 +24,14 @@ public class Cliente {
     @Column
     private String telefone;
 
-    public Cliente(String nome, String cpf, String email, LocalDate dataNasc, String telefone) {
-        this.nome = nome;
-        this.cpf = cpf;
-        this.email = email;
-        this.dataNasc = dataNasc;
-        this.telefone = telefone;
-    }
-
     public Cliente() {
     }
 
+    public Cliente(String nome, String cpf, String email, LocalDate of, String telefone) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.email = email;
+        this.dataNasc = of;
+        this.telefone = telefone;
+    }
 }

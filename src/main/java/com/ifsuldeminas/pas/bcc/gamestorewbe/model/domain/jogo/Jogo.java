@@ -36,7 +36,7 @@ public class Jogo {
         this.priceInitial = priceInitial;
         this.imageUrl = imageUrl;
     }
-
+    
     public Jogo() {
     }
 }

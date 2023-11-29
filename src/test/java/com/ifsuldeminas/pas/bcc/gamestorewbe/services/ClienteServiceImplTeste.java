@@ -1,8 +1,9 @@
 package com.ifsuldeminas.pas.bcc.gamestorewbe.services;
 
-import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Cliente.Cliente;
-import com.ifsuldeminas.pas.bcc.gamestorewbe.repositories.ClienteRepository;
-import com.ifsuldeminas.pas.bcc.gamestorewbe.services.impl.ClienteServiceImpl;
+
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.domain.cliente.Cliente;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.repositories.ClienteRepository;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.services.impl.ClienteServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -47,8 +48,9 @@ public class ClienteServiceImplTeste {
         clienteService.addCliente(p);
         p.setNome("nome2");
         clienteService.atualizaCliente(p);
-        assertTrue(clienteService.listarClientes().get(1).getNome().equals("nome2"));
+        assertTrue(clienteService.buscarClientePorId(p.getIdCliente()).getNome().equals("nome2"));
     }
+
 
     @Test
     void deletaCliente(){

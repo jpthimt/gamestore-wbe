@@ -38,6 +38,9 @@ public class JogoServiceImpl implements JogoService {
 
     @Override
     public void atualizaJogo(Jogo jogo) throws JogoNotFoundException{
+        if (!this.jogoRepository.existsById(jogo.getIdJogo())){
+            throw new JogoNotFoundException(jogo.getIdJogo());
+        }
         Jogo atual = this.buscarJogoPorId(jogo.getIdJogo());
         atual.setResponseName(jogo.getResponseName());
         atual.setReleaseDate(jogo.getReleaseDate());

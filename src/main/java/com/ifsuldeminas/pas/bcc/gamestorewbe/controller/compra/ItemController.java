@@ -24,8 +24,6 @@ public class ItemController {
     @PostMapping
     public ResponseEntity<List<Item>> addItem(@RequestBody List<Item> itens){
         for (Item item : itens) {
-//            if (itemService.verificaJogo(item))  // Verifica se o jogo existe
-//                return ResponseEntity.badRequest().build();
             itemService.addItem(item);
         }
         return ResponseEntity.ok().body(itens);
@@ -33,11 +31,8 @@ public class ItemController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Item> atualizaItem(@RequestBody Item item, @PathVariable Integer id ){
-        Item itemAtualizado = item;
-        itemAtualizado.setIdItem(id);
-//        if (itemService.verificaJogo(item))  // Verifica se o jogo existe
-//            return ResponseEntity.badRequest().build();
-        itemService.atualizaItem(itemAtualizado);
+        item.setIdItem(id);
+        itemService.atualizaItem(item);
         return ResponseEntity.noContent().build();
     }
 

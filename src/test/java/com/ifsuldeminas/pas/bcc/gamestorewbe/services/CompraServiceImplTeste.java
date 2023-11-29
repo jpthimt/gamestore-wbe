@@ -1,54 +1,64 @@
 package com.ifsuldeminas.pas.bcc.gamestorewbe.services;
 
-import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Compra.Compra;
-import com.ifsuldeminas.pas.bcc.gamestorewbe.repositories.CompraRepository;
-import com.ifsuldeminas.pas.bcc.gamestorewbe.services.impl.CompraServiceImpl;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.domain.cliente.Cliente;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.domain.compra.Compra;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.domain.compra.Item;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.domain.jogo.Jogo;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.repositories.CompraRepository;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.services.ClienteService;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.services.CompraService;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.services.ItemService;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.services.JogoService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 public class CompraServiceImplTeste {
     @Autowired
-    private CompraServiceImpl compraService;
+    private CompraService compraService;
     @Autowired
     private CompraRepository compraRepository;
+    @Autowired
+    private ClienteService clienteService;
+    @Autowired
+    private JogoService jogoService;
+    @Autowired
+    private ItemService itemService;
+
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+    Cliente cliente = new Cliente();
+    Item item = new Item();
+    Compra compra = new Compra();
 
     @Test
-    void listarCompras(){
-        assertNotNull(compraService.listarCompras());
-    }
-
-    @Test
-    void buscarCompraPorId(){
-        compraService.buscarCompraPorId(1);
-    }
-
-    @Test
-    void addCompra(){
-        Integer cont = compraService.listarCompras().size();
-        Compra compra = new Compra(1, 1.0f);
-        compraService.addCompra(compra);
-        assertNotNull(compraService.listarCompras().size() > cont);
-    }
-
-    @Test
-    void atualizarCompra(){
-        Compra compra = new Compra(1, 1.0f);
-        compraService.addCompra(compra);
-        compra.setIdCliente(2);
-        compraService.atualizaCompra(compra);
-        assertNotNull(compraService.listarCompras().get(0).getIdCliente().equals(2));
-    }
-
-    @Test
-    void removeCompra(){
-        Compra compra = new Compra(1, 1.0f);
-        compraService.addCompra(compra);
-        Integer cont = compraService.listarCompras().size();
-        compraService.deletaCompra(1);
-        assertNotNull(compraService.listarCompras().size() < cont);
+    public void realizarCompra() {
+        Cliente cliente1 = new Cliente("nome1", "cpf", "email", LocalDate.of(2001, 01, 01), "telefone");
+        clienteService.addCliente(cliente1);
+//        System.out.println(cliente1.toString());
+        Jogo jogo1 = new Jogo("nome1", LocalDate.of(2000, 01, 10), 1.0f, 1, 1.0f, "url");
+        Jogo jogo2 = new Jogo("nome2", LocalDate.of(2000, 01, 10), 1.0f, 1, 1.0f, "url");
+        jogoService.addJogo(jogo1);
+//        System.out.println(jogo1.toString());
+//        System.out.println(jogo2.toString());
+        Item item1 = new Item(jogo1, 1);
+//        Item item1 = new Item(jogo2, 1);  // Se adicionar com jogo2 dá erro, pois jogo2 não foi adicionado ao banco de dados
+        itemService.addItem(item1);
+        System.out.println(item1.toString());
+        List<Item> itens = new ArrayList<>();
+        itens.add(item1);
+        Compra compra1 = new Compra(cliente1, itens);
+        compraService.addCompra(compra1);
+        System.out.println(compra1.toString());
+        assertNotNull(compraService.buscarCompraPorId(1));
+//        assertTrue(compraService.buscarCompraPorId(1) == null);
     }
 }

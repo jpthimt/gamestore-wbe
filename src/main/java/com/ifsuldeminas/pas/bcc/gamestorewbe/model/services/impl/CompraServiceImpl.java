@@ -41,7 +41,7 @@ public class CompraServiceImpl implements CompraService {
     @Override
     public Compra buscarCompraPorId(Integer id) throws CompraNotFoundException {
         Optional<Compra> compra = compraRepository.findById(id);
-        if (!compra.isPresent()) {
+        if (compra.isEmpty()) {
             throw new CompraNotFoundException(id);
         }
         return compra.orElse(null);
@@ -50,20 +50,21 @@ public class CompraServiceImpl implements CompraService {
 
     @Override
     public void addCompra(Compra compra) throws ClienteNotFoundException {
-        Optional<Cliente> opc = Optional.ofNullable(clienteService.buscarClientePorId(compra.getCliente().getIdCliente()));
-        if (!opc.isPresent()) {
+        Optional<Cliente> opc = Optional.ofNullable(clienteService.buscarClientePorId(compra.getCliente().getIdCliente()));  // Verifica se o cliente existe
+        if (opc.isEmpty()) {  // Se não existe, retorna erro
             LOG.error("Erro ao adicionar Compra - Cliente não existe!");
             throw new ClienteNotFoundException(compra.getCliente().getIdCliente());
-        } else {
-            for (Item item : compra.getItens()) {  // Para cada item da compra
+        } else {  // Se existe
+            for (Item item : compra.getItens()) {  // Verifica se todos os jogos existem
                 Optional<Jogo> opi = Optional.ofNullable(jogoService.buscarJogoPorId(item.getJogo().getIdJogo()));
-                if (!opi.isPresent()) {
+                if (opi.isEmpty()) {  // Se não existe, retorna erro
                     LOG.error("Erro ao adicionar Item - Jogo não existe!");
                     throw new JogoNotFoundException(item.getJogo().getIdJogo());
                 }
             }
+            // Necessário verificar se todos os jogos existem antes de adicionar os itens para que não seja adicionado nenhum item caso algum jogo não exista
             for (Item item : compra.getItens())
-                itemService.addItem(item);  // Adiciona o item
+                itemService.addItem(item);  // Adiciona os itens
 
             compra.setValorTotal(calculaValorTotal(compra));
             compraRepository.save(compra);
@@ -73,44 +74,56 @@ public class CompraServiceImpl implements CompraService {
 
     @Override
     public void atualizaCompra(Compra compra, Integer id) throws CompraNotFoundException {
+        if (!this.compraRepository.existsById(id)) {
+            throw new CompraNotFoundException(id);
+        }
         Optional<Cliente> opc = Optional.ofNullable(clienteService.buscarClientePorId(compra.getCliente().getIdCliente())); // Verifica se o cliente existe
-        if (!opc.isPresent()) {  // Se não existe, retorna erro
+        if (opc.isEmpty()) {  // Se não existe, retorna erro
             LOG.info("Erro ao atualizar Compra - Cliente não existe!");
             throw new ClienteNotFoundException(compra.getCliente().getIdCliente());
         } else {  // Se existe
             for (Item item : compra.getItens()) {
                 Optional<Jogo> opj = Optional.ofNullable(jogoService.buscarJogoPorId(item.getJogo().getIdJogo()));  // Verifica se o jogo existe
-                if (!opj.isPresent()) {  // Se não existe, retorna erro
+                if (opj.isEmpty()) {  // Se não existe, retorna erro
                     LOG.info("Erro ao atualizar Item - Jogo não existe!");
                     throw new JogoNotFoundException(item.getJogo().getIdJogo());
                 }
             }
-            Compra compraAtual = buscarCompraPorId(compra.getIdCompra());  // Busca a compra atual/antiga
 
-            for (Item item : compra.getItens()) {
-                // Verifica se o item já existe na compra atual/antiga
-                boolean atualNovo = compraAtual.getItens().stream().filter(c -> c.getIdItem().equals(item.getIdItem())).findFirst().isPresent();
-                if(atualNovo){  // Se existe, atualiza o item
-                    LOG.info("Item já existe na compra e será atualizado!");
-                    itemService.atualizaItem(item);
-                }else{  // Se não existe
-                    for (Item itemAtual : compraAtual.getItens()) {
-                        if (!atualNovo){  // Se o item não existe na compra atual/antiga, mas existe na compra nova/atualizada, adiciona o item
-                            itemService.addItem(item);
-                            LOG.info("Item novo não existe na compra antiga e será adicionado!");
-                        }else{  // Se o item não existe na compra nova/atualizada, mas existe na compra atual/antiga, deleta o item
-                            itemService.deletaItem(itemAtual.getIdItem());
-                            LOG.info("Item antigo não existe na compra nova e será deletado!");
-                        }
+
+            Compra compraOld = buscarCompraPorId(id);  // Busca a compra atual/antiga
+            // Cria lista com os itens que já existem na compra antiga e na nova
+            List<Item> iguais = compra.getItens().stream().filter(c -> compraOld.getItens().stream().anyMatch(c2 -> c2.getIdItem().equals(c.getIdItem()))).toList();
+            for (Item item : iguais) {
+                itemService.atualizaItem(item);
+                LOG.info("Item já existe na compra e será atualizado!");
+            }
+            // Cria lista com os itens que existem na compra nova mas não na antiga
+            List<Item> novos = compra.getItens().stream().filter(c -> !compraOld.getItens().stream().anyMatch(c2 -> c2.getIdItem().equals(c.getIdItem()))).toList();
+            for (Item item : novos) {
+                itemService.addItem(item);
+                LOG.info("Item novo não existe na compra antiga e será adicionado!");
+            }
+            // Verifica se os itens da compra antiga existem na compra nova e apaga os que não existem
+            for (Item item : compraOld.getItens()){
+                boolean possui = false;
+                for (Item item2 : compra.getItens()){
+                    if (item.getIdItem().equals(item2.getIdItem())){
+                        possui = true;
+                        break;
                     }
+                }
+                if (!possui){
+                    itemService.deletaItem(item.getIdItem());
+                    LOG.info("Item antigo não existe na compra nova e será deletado!");
                 }
             }
             compra.setIdCompra(id);
-            compraAtual.setCliente(compra.getCliente());
-            compraAtual.setDataCompra(compra.getDataCompra());
-            compraAtual.setItens(compra.getItens());
-            compraAtual.setValorTotal(calculaValorTotal(compra));
-            compraRepository.save(compraAtual);
+            compraOld.setCliente(compra.getCliente());
+            compraOld.setDataCompra(compra.getDataCompra());
+            compraOld.setItens(compra.getItens());
+            compraOld.setValorTotal(calculaValorTotal(compra));
+            compraRepository.save(compraOld);
             LOG.info("Compra atualizada com sucesso");
         }
     }
@@ -127,7 +140,7 @@ public class CompraServiceImpl implements CompraService {
     @Override
     public Float calculaValorTotal(Compra compra) {
         List<Item> itens = compra.getItens();
-        Float total = 0f;
+        float total = 0f;
         for (Item item : itens) {
             total += item.getValor() * item.getQuantidade();
         }

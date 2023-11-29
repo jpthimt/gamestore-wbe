@@ -3,6 +3,7 @@ package com.ifsuldeminas.pas.bcc.gamestorewbe.model.services.impl;
 
 import com.ifsuldeminas.pas.bcc.gamestorewbe.model.domain.cliente.Cliente;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.model.exceptions.cliente.ClienteNotFoundException;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.exceptions.jogo.JogoNotFoundException;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.model.repositories.ClienteRepository;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.model.services.ClienteService;
 import lombok.extern.java.Log;
@@ -43,6 +44,9 @@ public class ClienteServiceImpl implements ClienteService {
 
     @Override
     public void atualizaCliente(Cliente cliente) throws ClienteNotFoundException{
+        if (!this.clienteRepository.existsById(cliente.getIdCliente())){
+            throw new ClienteNotFoundException(cliente.getIdCliente());
+        }
         Cliente atual = this.buscarClientePorId(cliente.getIdCliente());
         atual.setNome(cliente.getNome());
         atual.setCpf(cliente.getCpf());

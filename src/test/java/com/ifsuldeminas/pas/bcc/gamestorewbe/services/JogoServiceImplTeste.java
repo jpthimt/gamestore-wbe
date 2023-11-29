@@ -1,8 +1,9 @@
 package com.ifsuldeminas.pas.bcc.gamestorewbe.services;
 
-import com.ifsuldeminas.pas.bcc.gamestorewbe.entities.Jogo.Jogo;
-import com.ifsuldeminas.pas.bcc.gamestorewbe.repositories.JogoRepository;
-import com.ifsuldeminas.pas.bcc.gamestorewbe.services.impl.JogoServiceImpl;
+
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.domain.jogo.Jogo;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.repositories.JogoRepository;
+import com.ifsuldeminas.pas.bcc.gamestorewbe.model.services.impl.JogoServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -45,7 +46,7 @@ public class JogoServiceImplTeste {
         jogoService.addJogo(jogo);
         jogo.setResponseName("nome2");
         jogoService.atualizaJogo(jogo);
-        assertNotNull(jogoService.listarJogos().get(0).getResponseName().equals("nome2"));
+        assertNotNull(jogoService.buscarJogoPorId(jogo.getIdJogo()).getResponseName().equals("nome2"));
     }
 
     @Test
