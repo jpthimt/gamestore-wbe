@@ -27,7 +27,7 @@ public class Compra {
     @JoinColumn(name = "cliente")
     private Cliente cliente;
 
-    @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REMOVE})
+    @OneToMany(cascade = {CascadeType.MERGE, CascadeType.REMOVE}, fetch = FetchType.EAGER)
     @JoinColumn(name = "idCompra")
     private List<Item> itens;
 

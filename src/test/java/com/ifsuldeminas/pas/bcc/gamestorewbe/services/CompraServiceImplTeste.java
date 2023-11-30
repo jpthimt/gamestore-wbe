@@ -9,6 +9,7 @@ import com.ifsuldeminas.pas.bcc.gamestorewbe.model.services.ClienteService;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.model.services.CompraService;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.model.services.ItemService;
 import com.ifsuldeminas.pas.bcc.gamestorewbe.model.services.JogoService;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -35,9 +36,13 @@ public class CompraServiceImplTeste {
 
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-    Cliente cliente = new Cliente();
-    Item item = new Item();
-    Compra compra = new Compra();
+    @BeforeEach
+    public void setup() {
+        Cliente cliente = new Cliente();
+        Jogo jogo = new Jogo();
+        Item item = new Item();
+        Compra compra = new Compra();
+    }
 
     @Test
     public void realizarCompra() {
@@ -53,12 +58,31 @@ public class CompraServiceImplTeste {
 //        Item item1 = new Item(jogo2, 1);  // Se adicionar com jogo2 dá erro, pois jogo2 não foi adicionado ao banco de dados
         itemService.addItem(item1);
         System.out.println(item1.toString());
-        List<Item> itens = new ArrayList<>();
-        itens.add(item1);
-        Compra compra1 = new Compra(cliente1, itens);
+//        List<Item> itens = new ArrayList<Item>();
+//        itens.add(item1);
+        Compra compra1 = new Compra(cliente1, List.of(item1));
         compraService.addCompra(compra1);
         System.out.println(compra1.toString());
         assertNotNull(compraService.buscarCompraPorId(1));
 //        assertTrue(compraService.buscarCompraPorId(1) == null);
+    }
+
+    @Test
+    public void atualizarCompra(){
+        Cliente cliente1 = new Cliente("nome1", "cpf", "email", LocalDate.of(2001, 01, 01), "telefone");
+        clienteService.addCliente(cliente1);
+        Cliente cliente2 = new Cliente("nome2", "cpf", "email", LocalDate.of(2001, 01, 01), "telefone");
+        clienteService.addCliente(cliente2);
+        Jogo jogo1 = new Jogo("nome1", LocalDate.of(2000, 01, 10), 1.0f, 1, 1.0f, "url");
+        jogoService.addJogo(jogo1);
+        Item item1 = new Item(jogo1, 1);
+        itemService.addItem(item1);
+        List<Item> itens = new ArrayList<>();
+        itens.add(item1);
+        Compra compra1 = new Compra(cliente1, itens);
+        compraService.addCompra(compra1);
+        Compra compra2 = new Compra(cliente2, itens);
+        compraService.atualizaCompra(compra2, compra1.getIdCompra());
+        assertEquals(compra2.getCliente(), compraService.buscarCompraPorId(compra1.getIdCompra()).getCliente());
     }
 }
