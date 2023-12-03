@@ -1,0 +1,400 @@
+{
+	"info": {
+		"_postman_id": "620afc6e-f610-44ba-b2cb-a5154af625ec",
+		"name": "Games",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25189003"
+	},
+	"item": [
+		{
+			"name": "Jogos",
+			"item": [
+				{
+					"name": "Listar Jogos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/jogos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jogos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adicionar Jogos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"responseName\": \"Counter-Strike\",\n        \"releaseDate\": \"01/11/2000\",\n        \"metacritic\": \"88\",\n        \"recommendationCount\": \"68991\",\n        \"priceInitial\": \"9.99\",\n        \"imageUrl\": \"https://www.techpowerup.com/review/counter-strike-2-benchmark-test-performance-analysis/images/small.png\"\n    },\n    {\n        \"responseName\": \"Deep Rock Galactic\",\n        \"releaseDate\": \"13/02/2018\",\n        \"metacritic\": \"10\",\n        \"recommendationCount\": \"2439\",\n        \"priceInitial\": \"4.99\",\n        \"imageUrl\": \"https://1.bp.blogspot.com/-F6HSt-JekcI/XrwLemYwW4I/AAAAAAABMWg/vuMqJqZYy4gcKWeALBhf4FRpXcl7mqBjgCLcBGAsYHQ/s640/anao%2Bmedieval%2Beh%2Bcoisa%2Bdo%2Bpassado.jpg\"\n    },\n    {\n        \"responseName\": \"Hades\",\n        \"releaseDate\": \"17/09/2020\",\n        \"metacritic\": \"79\",\n        \"recommendationCount\": \"2319\",\n        \"priceInitial\": \"4.99\",\n        \"imageUrl\": \"https://image.api.playstation.com/vulcan/ap/rnd/202104/0517/9AcM3vy5t77zPiJyKHwRfnNT.png\"\n    },\n    {\n        \"responseName\": \"Sekiro: Shadows Die Twice\",\n        \"releaseDate\": \"22/03/2019\",\n        \"metacritic\": \"0\",\n        \"recommendationCount\": \"888\",\n        \"priceInitial\": \"4.99\",\n        \"imageUrl\": \"https://upload.wikimedia.org/wikipedia/pt/7/7b/Sekiro_Shadows_Die_Twice_capa.png\"\n    },\n    {\n        \"responseName\": \"Subnautica\",\n        \"releaseDate\": \"23/01/2018\",\n        \"metacritic\": \"0\",\n        \"recommendationCount\": \"2934\",\n        \"priceInitial\": \"4.99\",\n        \"imageUrl\": \"https://upload.wikimedia.org/wikipedia/pt/1/12/Capa_de_Subnautica.png\"\n    },\n    {\n        \"responseName\": \"Risk of Rain\",\n        \"releaseDate\": \"08/11/2013\",\n        \"metacritic\": \"0\",\n        \"recommendationCount\": \"1965\",\n        \"priceInitial\": \"4.99\",\n        \"imageUrl\": \"https://cdn.cdkeys.com/500x706/media/catalog/product/n/e/new_project_11_.jpg\"\n    },\n    {\n        \"responseName\": \"The Binding of Isaac: Rebirth\",\n        \"releaseDate\": \"04/11/2014\",\n        \"metacritic\": \"96\",\n        \"recommendationCount\": \"12486\",\n        \"priceInitial\": \"9.99\",\n        \"imageUrl\": \"https://upload.wikimedia.org/wikipedia/en/thumb/e/e1/The_Binding_of_Issac_Rebirth_cover.jpg/220px-The_Binding_of_Issac_Rebirth_cover.jpg\"\n    },\n    {\n        \"responseName\": \"Bloons TD 6\",\n        \"releaseDate\": \"14/06/2018\",\n        \"metacritic\": \"0\",\n        \"recommendationCount\": \"2547\",\n        \"priceInitial\": \"9.99\",\n        \"imageUrl\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLevz0Q-gACYxxyeIduNpB17UR8IBKW5kHZZm_TTzgngm4PZMOFiRkd7cI-DRvacqDwq4&usqp=CAU\"\n    },\n    {\n        \"responseName\": \"Hollow Knight\",\n        \"releaseDate\": \"24/02/2017\",\n        \"metacritic\": \"96\",\n        \"recommendationCount\": \"35792\",\n        \"priceInitial\": \"9.99\",\n        \"imageUrl\": \"https://upload.wikimedia.org/wikipedia/en/0/04/Hollow_Knight_first_cover_art.webp\"\n    },\n    {\n        \"responseName\": \"Portal 2\",\n        \"releaseDate\": \"18/04/2011\",\n        \"metacritic\": \"88\",\n        \"recommendationCount\": \"53931\",\n        \"priceInitial\": \"19.99\",\n        \"imageUrl\": \"https://upload.wikimedia.org/wikipedia/pt/f/f9/Portal2cover.jpg\"\n    },\n    {\n        \"responseName\": \"Dying Light\",\n        \"releaseDate\": \"27/01/2015\",\n        \"metacritic\": \"93\",\n        \"recommendationCount\": \"7185\",\n        \"priceInitial\": \"9.99\",\n        \"imageUrl\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvJ8mC0WnqNiGL6i0oHILSreOpmRz1Oq7icQ&usqp=CAU\"\n    },\n    {\n        \"responseName\": \"Don't Starve Together\",\n        \"releaseDate\": \"21/04/2016\",\n        \"metacritic\": \"80\",\n        \"recommendationCount\": \"4328\",\n        \"priceInitial\": \"4.99\",\n        \"imageUrl\": \"https://upload.wikimedia.org/wikipedia/en/thumb/d/d2/Don%27t_Starve_cover.jpg/220px-Don%27t_Starve_cover.jpg\"\n    },\n    {\n        \"responseName\": \"The Forest\",\n        \"releaseDate\": \"30/04/2018\",\n        \"metacritic\": \"91\",\n        \"recommendationCount\": \"4352\",\n        \"priceInitial\": \"0\",\n        \"imageUrl\": \"https://upload.wikimedia.org/wikipedia/en/4/46/TheForest_Game.jpg\"\n    },\n    {\n        \"responseName\": \"Phasmophobia\",\n        \"releaseDate\": \"18/09/2020\",\n        \"metacritic\": \"84\",\n        \"recommendationCount\": \"864\",\n        \"priceInitial\": \"9.99\",\n        \"imageUrl\": \"https://m.media-amazon.com/images/M/MV5BNzQwZmU2MWQtODM2Ni00YTZjLWJiNzQtZTA0MDBiMzk1YjMzXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg\"\n    },\n    {\n        \"responseName\": \"Stardew Valley\",\n        \"releaseDate\": \"26/02/2016\",\n        \"metacritic\": \"87\",\n        \"recommendationCount\": \"4437\",\n        \"priceInitial\": \"7.99\",\n        \"imageUrl\": \"https://upload.wikimedia.org/wikipedia/en/f/fd/Logo_of_Stardew_Valley.png\"\n    },\n    {\n        \"responseName\": \"Euro Truck Simulator\",\n        \"releaseDate\": \"19/10/2012\",\n        \"metacritic\": \"90\",\n        \"recommendationCount\": \"27535\",\n        \"priceInitial\": \"9.99\",\n        \"imageUrl\": \"https://upload.wikimedia.org/wikipedia/en/0/0e/Euro_Truck_Simulator_2_cover.jpg\"\n    },\n    {\n        \"responseName\": \"The Witcher 3: Wild Hunt\",\n        \"releaseDate\": \"19/05/2015\",\n        \"metacritic\": \"90\",\n        \"recommendationCount\": \"6104\",\n        \"priceInitial\": \"7.99\",\n        \"imageUrl\": \"https://upload.wikimedia.org/wikipedia/pt/0/06/TW3_Wild_Hunt.png\"\n    },\n    {\n        \"responseName\": \"Left 4 Dead 2\",\n        \"releaseDate\": \"17/11/2009\",\n        \"metacritic\": \"92\",\n        \"recommendationCount\": \"383949\",\n        \"priceInitial\": \"0\",\n        \"imageUrl\": \"https://upload.wikimedia.org/wikipedia/en/b/ba/Left4Dead2.jpg\"\n    },\n    {\n        \"responseName\": \"Garry's Mod\",\n        \"releaseDate\": \"24/12/2004\",\n        \"metacritic\": \"89\",\n        \"recommendationCount\": \"9980\",\n        \"priceInitial\": \"19.99\",\n        \"imageUrl\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Garry%27s_Mod_logo.svg/200px-Garry%27s_Mod_logo.svg.png\"\n    },\n    {\n        \"responseName\": \"Terraria\",\n        \"releaseDate\": \"16/05/2011\",\n        \"metacritic\": \"89\",\n        \"recommendationCount\": \"9980\",\n        \"priceInitial\": \"19.99\",\n        \"imageUrl\": \"https://upload.wikimedia.org/wikipedia/en/thumb/1/1a/Terraria_Steam_artwork.jpg/220px-Terraria_Steam_artwork.jpg\"\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/jogos/addLista",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jogos",
+								"addLista"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adicionar 1 Jogo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"responseName\": \"Counter-Strike\",\n    \"releaseDate\": \"01/11/2000\",\n    \"metacritic\": \"88\",\n    \"recommendationCount\": \"68991\",\n    \"priceInitial\": \"9.99\",\n    \"imageUrl\": \"https://www.techpowerup.com/review/counter-strike-2-benchmark-test-performance-analysis/images/small.png\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/jogos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jogos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualiza Jogo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"responseName\": \"Counter-Strikewad\",\n    \"releaseDate\": \"01/11/2000\",\n    \"metacritic\": \"88\",\n    \"recommendationCount\": \"68991\",\n    \"priceInitial\": \"9.99\",\n    \"imageUrl\": \"https://www.techpowerup.com/review/counter-strike-2-benchmark-test-performance-analysis/images/small.png\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/jogos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jogos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Jogo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/jogos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jogos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "Adicionar Clientes",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n        {\n            \"nome\": \"Counter-Strike\",\n            \"cpf\": \"0148620\",\n            \"email\": \"asfkasf\",\n            \"dataNasc\": \"01/11/2000\",\n            \"telefone\": \"68991\"\n        },\n        {\n             \"nome\": \"Counter-asf\",\n            \"cpf\": \"123\",\n            \"email\": \"gmasmgas\",\n            \"dataNasc\": \"01/11/2000\",\n            \"telefone\": \"12412\"\n        }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clientes/addLista",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"addLista"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Clientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adicionar 1 Cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Counter-Strike\",\n    \"cpf\": \"0148620\",\n    \"email\": \"asfkasf\",\n    \"dataNasc\": \"01/11/2000\",\n    \"telefone\": \"68991\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Cliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Counter-Strikasde\",\n    \"cpf\": \"0148620\",\n    \"email\": \"asfkasf\",\n    \"dataNasc\": \"01/11/2000\",\n    \"telefone\": \"68991\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clientes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Cliente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clientes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Compra",
+			"item": [
+				{
+					"name": "Adicionar 1 Compra",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cliente\": {\n        \"idCliente\": 2\n    },\n    \"dataCompra\": \"10/10/2023\",\n    \"itens\": [\n        {\n            \"jogo\": {\n                \"idJogo\": 10\n            },\n            \"quantidade\": 1\n        },\n        {\n            \"jogo\": {\n                \"idJogo\": 15\n            },\n            \"quantidade\": 1\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/compras",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"compras"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adicionar Compras",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\n    \"cliente\": {\n        \"idCliente\": 1\n    },\n    \"dataCompra\": \"10/10/2023\",\n    \"itens\": [\n        {\n            \"jogo\": {\n                \"idJogo\": 11\n            },\n            \"quantidade\": 1\n        },\n        {\n            \"jogo\": {\n                \"idJogo\": 12\n            },\n            \"quantidade\": 1\n        }\n    ]\n}]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/compras/addLista",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"compras",
+								"addLista"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Compras",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/compras",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"compras"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Compras",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cliente\": {\n        \"idCliente\": 2\n    },\n    \"dataCompra\": \"10/10/2023\",\n    \"itens\": [\n        {\n            \"jogo\": {\n                \"idJogo\": 12\n            },\n            \"quantidade\": 2\n        },\n        {\n            \"jogo\": {\n                \"idJogo\": 4\n            },\n            \"quantidade\": 1\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/compras/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"compras",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Compra",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/compras/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"compras",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
