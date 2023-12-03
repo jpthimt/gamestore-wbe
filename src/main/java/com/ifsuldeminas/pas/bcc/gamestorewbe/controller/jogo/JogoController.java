@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/jogos")
-@CrossOrigin(origins = "http://localhost:4200/jogos") // Para integrar com o front
+//@CrossOrigin(origins = "http://localhost:4200/jogos") // Para integrar com o front
 public class JogoController {
 
     @Autowired
